@@ -4,7 +4,6 @@ An app that keeps track of arguments made in chapters of a book.
 
 ## TODO
 
-- remove express backend
 - implement multiple pages ([help](https://facebook.github.io/create-react-app/docs/deployment#notes-on-client-side-routing))
 
 ## Requirements
