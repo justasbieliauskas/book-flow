@@ -4,7 +4,9 @@ An app that keeps track of arguments made in chapters of a book.
 
 ## TODO
 
-- implement multiple pages ([help](https://facebook.github.io/create-react-app/docs/deployment#notes-on-client-side-routing))
+In memory database.
+
+- List of books without covers as a reusable component.
 
 ## Requirements
 
@@ -29,3 +31,11 @@ Deleting it prompts a confirmation message below it.
 - React
 - React router
 - React bootstrap
+
+## IndexedDB
+
+[Google](https://developers.google.com/web/ilt/pwa/working-with-indexeddb)
+
+[Some blog](https://flaviocopes.com/indexeddb/)
+
+[Promises library](https://github.com/jakearchibald/idb)
