@@ -5,6 +5,8 @@ import Books from './Books';
 import Chapters from './Chapters';
 import Arguments from './Arguments';
 
+import booksInMemory from './books/in-memory';
+
 export default class App extends Component {
   constructor() {
     super();
@@ -38,31 +40,33 @@ export default class App extends Component {
   }
 
   addBook(title) {
-    const books = this.state.books;
-    const lastId = books[books.length - 1].id;
     this.setState({
-      books: [
-        ...books,
-        {id: lastId + 1, title, chapters: []},
-      ],
+      books: booksInMemory.withNewBook(
+        this.state.books,
+        title
+      ),
     });
   }
 
   addChapter(bookId, title) {
-    const books = [...this.state.books];
-    const book = books.find(book => book.id === bookId);
-    const chapters = book.chapters;
-    const lastId = chapters.length > 0 ? chapters[chapters.length - 1].id : -1;
-    book.chapters.push({id: lastId + 1, title, arguments: []});
-    this.setState({books});
+    this.setState({
+      books: booksInMemory.withNewChapter(
+        this.state.books,
+        bookId,
+        title
+      ),
+    });
   }
 
   addArgument(bookId, chapterId, argument) {
-    const books = [...this.state.books];
-    const book = books.find(book => book.id === bookId);
-    const chapter = book.chapters.find(chapter => chapter.id === chapterId);
-    chapter.arguments.push(argument);
-    this.setState({books});
+    this.setState({
+      books: booksInMemory.withNewArgument(
+        this.state.books,
+        bookId,
+        chapterId,
+        argument
+      ),
+    });
   }
 
   render() {
