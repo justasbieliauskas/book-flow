@@ -4,9 +4,7 @@ An app that keeps track of arguments made in chapters of a book.
 
 ## TODO
 
-In memory database.
-
-- List of books without covers as a reusable component.
+Implement initial requirements with minimal design for mobile viewport with in-memory db.
 
 ## Requirements
 
