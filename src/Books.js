@@ -5,15 +5,6 @@ import Container from 'react-bootstrap/Container';
 import AddNew from './AddNew';
 
 export default class Books extends Component {
-  constructor(props) {
-    super(props);
-    this.printBook = this.printBook.bind(this);
-  }
-
-  printBook(title) {
-    console.log('Title is: ' + title);
-  }
-
   render() {
     return (
       <Container>
@@ -31,7 +22,7 @@ export default class Books extends Component {
           <li>
             <AddNew
               placeholder="Book title"
-              add={this.printBook}
+              add={this.props.addNew}
             />
           </li>
         </ul>

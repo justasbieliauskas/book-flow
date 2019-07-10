@@ -21,6 +21,7 @@ export default class AddNew extends Component {
       this.setState({showInput: true});
     } else {
       this.props.add(this.state.value);
+      this.setState({showInput: false, value: ''});
     }
   }
 
