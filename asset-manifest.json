@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/book-flow/static/css/main.34de6062.chunk.css",
-    "main.js": "/book-flow/static/js/main.96a9a23c.chunk.js",
-    "main.js.map": "/book-flow/static/js/main.96a9a23c.chunk.js.map",
+    "main.js": "/book-flow/static/js/main.900deecd.chunk.js",
+    "main.js.map": "/book-flow/static/js/main.900deecd.chunk.js.map",
     "runtime~main.js": "/book-flow/static/js/runtime~main.d2e0c97a.js",
     "runtime~main.js.map": "/book-flow/static/js/runtime~main.d2e0c97a.js.map",
-    "static/js/2.47dd74e8.chunk.js": "/book-flow/static/js/2.47dd74e8.chunk.js",
-    "static/js/2.47dd74e8.chunk.js.map": "/book-flow/static/js/2.47dd74e8.chunk.js.map",
+    "static/js/2.a83bbcd5.chunk.js": "/book-flow/static/js/2.a83bbcd5.chunk.js",
+    "static/js/2.a83bbcd5.chunk.js.map": "/book-flow/static/js/2.a83bbcd5.chunk.js.map",
     "index.html": "/book-flow/index.html",
-    "precache-manifest.e5b15b1c31b31924fdb7ca7330ab764a.js": "/book-flow/precache-manifest.e5b15b1c31b31924fdb7ca7330ab764a.js",
+    "precache-manifest.bea96c39f1f6e24971aa8246e4e5b0a6.js": "/book-flow/precache-manifest.bea96c39f1f6e24971aa8246e4e5b0a6.js",
     "service-worker.js": "/book-flow/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/book-flow/static/css/main.34de6062.chunk.css.map"
   }
