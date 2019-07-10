@@ -2,10 +2,6 @@
 
 An app that keeps track of arguments made in chapters of a book.
 
-## TODO
-
-Implement initial requirements with minimal design for mobile viewport with in-memory db.
-
 ## Requirements
 
 All information is saved to a file at the moment.
