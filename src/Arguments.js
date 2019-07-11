@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
+import Back from './Back';
 import AddNew from './AddNew';
 
 export default class Arguments extends Component {
@@ -28,22 +32,29 @@ export default class Arguments extends Component {
     const chapter = this.chapter;
     return (
       <Container>
-        <h1>{chapter.title}</h1>
-        <ul>
-          {chapter.arguments.map((argument, index) => {
-            return (
-              <li key={index}>
-                {argument}
+        <Row>
+          <Col>
+            <h1>{chapter.title}</h1>
+            <ul>
+              {chapter.arguments.map((argument, index) => {
+                return (
+                  <li key={index}>
+                    {argument}
+                  </li>
+                );
+              })}
+              <li>
+                <AddNew 
+                  placeholder="Argument"
+                  add={this.handleAdd}
+                />
               </li>
-            );
-          })}
-          <li>
-            <AddNew 
-              placeholder="Argument"
-              add={this.handleAdd}
-            />
-          </li>
-        </ul>
+            </ul>
+          </Col>
+        </Row>
+        <Row>
+          <Col><Back /></Col>
+        </Row>
       </Container>
     );
   }

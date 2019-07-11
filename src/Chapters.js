@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
+
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
+import Back from './Back';
 import AddNew from './AddNew';
 
 export default class Chapters extends Component {
@@ -19,24 +23,31 @@ export default class Chapters extends Component {
     const book = this.props.books.find(withId);
     return (
       <Container>
-        <h1>{book.title}</h1>
-        <ul>
-          {book.chapters.map(chapter => {
-            return (
-              <li key={chapter.id}>
-                <Link to={`/books/${book.id}/chapters/${chapter.id}`}>
-                  {chapter.title}
-                </Link>
+        <Row>
+          <Col>
+            <h1>{book.title}</h1>
+            <ul>
+              {book.chapters.map(chapter => {
+                return (
+                  <li key={chapter.id}>
+                    <Link to={`/books/${book.id}/chapters/${chapter.id}`}>
+                      {chapter.title}
+                    </Link>
+                  </li>
+                );
+              })}
+              <li>
+                <AddNew 
+                  placeholder="Chapter title"
+                  add={this.handleAdd}
+                />
               </li>
-            );
-          })}
-          <li>
-            <AddNew 
-              placeholder="Chapter title"
-              add={this.handleAdd}
-            />
-          </li>
-        </ul>
+            </ul>
+          </Col>
+        </Row>
+        <Row>
+          <Col><Back /></Col>
+        </Row>
       </Container>
     );
   }
