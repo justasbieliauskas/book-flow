@@ -6,33 +6,12 @@ import Chapters from './Chapters';
 import Arguments from './Arguments';
 
 import booksInMemory from './books/in-memory';
+import booksInLocalStorage from './books/localStorage';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      books: [
-        {
-          id: 0,
-          title: 'Code Ahead',
-          chapters: [
-            {
-              id: 0,
-              title: 'Adrian',
-              arguments: [
-                'First argument',
-                'Second argument',
-                'Argument number three',
-              ],
-            },
-            {id: 1, title: 'Dennis'},
-            {id: 2, title: 'Tony'},
-          ],
-        },
-        {id: 1, title: '12 Rules For Life'},
-        {id: 2, title: 'Homo Deus'},
-      ],
-    };
+  constructor(props) {
+    super(props);
+    this.state = { books: this.props.books };
     
     this.addBook = this.addBook.bind(this);
     this.addChapter = this.addChapter.bind(this);
@@ -40,33 +19,33 @@ export default class App extends Component {
   }
 
   addBook(title) {
-    this.setState({
-      books: booksInMemory.withNewBook(
-        this.state.books,
-        title
-      ),
-    });
+    const books = booksInMemory.withNewBook(
+      this.state.books,
+      title
+    );
+    this.setState({ books });
+    booksInLocalStorage.store(books);
   }
 
   addChapter(bookId, title) {
-    this.setState({
-      books: booksInMemory.withNewChapter(
-        this.state.books,
-        bookId,
-        title
-      ),
-    });
+    const books = booksInMemory.withNewChapter(
+      this.state.books,
+      bookId,
+      title
+    );
+    this.setState({ books });
+    booksInLocalStorage.store(books);
   }
 
   addArgument(bookId, chapterId, argument) {
-    this.setState({
-      books: booksInMemory.withNewArgument(
-        this.state.books,
-        bookId,
-        chapterId,
-        argument
-      ),
-    });
+    const books = booksInMemory.withNewArgument(
+      this.state.books,
+      bookId,
+      chapterId,
+      argument
+    );
+    this.setState({ books });
+    booksInLocalStorage.store(books);
   }
 
   render() {
